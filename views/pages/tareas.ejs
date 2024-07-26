@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('../includes/head') %>
+  </head>
+  <body>
+    <%- include('../includes/header') %>
+
+    <div class="container" style="margin-top: 80px !important">
+      <div class="row justify-content-md-center mb-5">
+        <div class="col-md-12 mt-5">
+          <h2 class="text-center title">
+            
+            
+            <hr />
+            "Cada tarea completada es un paso hacia tus objetivos."
+          </h2>
+        </div>
+      </div>
+
+      <div class="row justify-content-md-center mb-5">
+        <div class="col-md-4 mb-5">
+          <h3 class="text-center" style="color: #a86403dc;">
+            Registra la tarea
+            <hr />
+          </h3>
+          <form action="/list_tareas" method="POST">
+            <div class="mb-3">
+              <label for="fecha" class="form-label"> Fecha </label>
+              <input type="text" name="fecha" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="tarea" class="form-label"> Tarea </label>
+              <input type="text" name="tarea" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="descripcion">Descripcion</label>
+              <input type="text" name="descripcion" class="form-control" />
+            </div>
+
+            <div class="d-grid gap-2 col-12 mx-auto mt-4 mb-4">
+              <button class="btn" 
+                      type="submit" 
+                      style="background-color: #cf9a0685; border-color: #b88830; color: #a86403dc;">
+                Registra la tarea
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-8 py-3 custom_table">
+          <h3 class="text-center" style="color: #a86403dc;">
+            Lista de tareas
+            <hr />
+          </h3>
+
+          <form action="/buscar_tarea" method="GET">
+            <div class="mb-3">
+              <input type="text" name="query" class="form-control" placeholder="Buscar tarea..." />
+            </div>
+            <button class="btn" 
+                      type="submit" 
+                      style="background-color: #cf9a0685; border-color: #b88830; color: #a86403dc;">
+                Buscar
+              </button>
+          </form>
+
+          <div class="table-responsive mt-3">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Fecha</th>
+                  <th>Tarea</th>
+                  <th>Descripcion</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% let contador = 1; %>
+                <% tareas.forEach(function(tarea) { %>
+                <tr>
+                  <th scope="row"><%= contador %></th>
+                  <td><%= tarea.fecha %></td>
+                  <td><%= tarea.tarea %></td>
+                  <td><%= tarea.descripcion %></td>
+                  <td>
+                    <span style="display: flex; justify-content: space-between">
+                     
+                      <a class="btn btn-success success_especial" title="Editar datos de la tarea" href="/formulario-actualizar-tarea/<%= tarea.id %>">
+                        <i class="bi bi-pencil-square"></i>
+                      </a>
+                      <form action="/borrar-tarea/<%= tarea.id %>" method="POST">
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <button class="bi bi-trash"
+                        type="submit" 
+                        style="background-color: #037249dc; border-color: #04663d33; color: #faf9f7;">
+                        Tarea cumplida
+                        </button>
+
+                      </form>
+                    </span>
+                  </td>
+                </tr>
+                <% contador++; %>
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../includes/scripts') %>
+  </body>
+</html>

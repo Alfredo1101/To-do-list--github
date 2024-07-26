@@ -1,23 +1,44 @@
 body {
   margin: 0;
-  background-color: #fafff9;
+  background-color: #f6faf6;
   font-family: "Ubuntu", sans-serif;
 }
 
+.bg-custom {
+  background-image: url('../imgs/Fondo1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh; /* Asegúrate de que el fondo cubra toda la pantalla */
+  color: #fdfafa;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* Ajusta el color y la opacidad según tus necesidades */
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+
 .title {
-  color: #3f9435;
+  color: #ce9a5f;
   font-size: 50px;
   font-weight: 900;
 }
 form {
-  background-color: #fff;
+  background-color: #e2d4af;
   padding: 5px 10px;
   border-radius: 10px;
-  box-shadow: 0px 17px 26px -8px rgba(151, 172, 193, 0.6);
+  box-shadow: 0px 17px 26px -8px rgba(202, 175, 135, 0.6);
+  color: #be8646;
 }
 .custom_table {
   background-color: #fff;
-  box-shadow: 0px 2px 97px 7px rgba(151, 172, 193, 0.6);
+  box-shadow: 0px 2px 97px 7px rgba(226, 198, 136, 0.6);
   border-radius: 5px;
 }
 .container {

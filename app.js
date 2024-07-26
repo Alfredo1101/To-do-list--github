@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.render("inicio", {});
 });
 
-// Usa el enrutador para las rutas relacionadas con estudiantes
+// Usa el enrutador para las rutas relacionadas con las tareas
 app.use("/", router);
 
 const PORT = process.env.PORT || 3600;

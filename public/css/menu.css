@@ -7,7 +7,7 @@ a {
 
 /* header */
 .header {
-  background-color: #fff;
+  background-color: #f8f5f5;
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
@@ -31,7 +31,8 @@ a {
 
 .header li a:hover,
 .header .menu-btn:hover {
-  background-color: #f4f4f4;
+  background-color: #b4b4ce;
+  color: #000;
 }
 
 .header .logo {
@@ -42,7 +43,7 @@ a {
   text-decoration: none;
 }
 .logo img {
-  width: 50px;
+  width: 70px;
 }
 
 /* menu */
@@ -139,5 +140,5 @@ a {
 }
 
 .active {
-  border-bottom: 3px solid #3f8a3b !important;
+  border-bottom: 3px solid #8a6a3b !important;
 }
